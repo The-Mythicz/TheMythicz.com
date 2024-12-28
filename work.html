@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mythicz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset and Styles */
+        body {
+            margin: 0;
+            font-family: 'Rajdhani', sans-serif;
+            background: #181a1d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            box-sizing: border-box;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffc107;
+            text-transform: uppercase;
+        }
+
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffc107;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(to bottom, #202328, #181a1d);
+            border-radius: 10px;
+            margin: 2rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: #ffc107;
+        }
+
+        p {
+            margin: 1rem 0 2rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #2a2d30; /* Brighter card background for better contrast */
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            color: #ffc107;
+            margin-bottom: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .button-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background-color: #ffc107;
+            color: #000;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button-link:hover {
+            background-color: #e6a700;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: #111;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .grid {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">The Mythicz</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about us.html">About</a>
+            <a href="#work">Our Work</a>
+            <a href="games.html">Games</a>
+            <a href="careers.html">Careers</a>
+            <a href="creativity.html">Creativity</a>
+            <a href="help.html">Help</a>
+        </nav>
+    </header>
+
+    <section id="work">
+        <h2>Our Work</h2>
+        <p>Explore the projects and collaborations that bring our vision to life. From immersive gaming experiences to community-driven initiatives, our work speaks to the heart of storytelling and innovation.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Projects we are working on</h3>
+                <p>Action-adventure games that reimagines Indian mythology with stunning graphics and engaging gameplay.</p>
+                <a href="games.html" class="button-link">Get a sneek peek of our projects</a>
+            </div>
+            <div class="card">
+                <h3>Collaborations</h3>
+                <p>Partnering with artists, writers, and developers to create meaningful and impactful experiences.</p>
+                <a href="#community" class="button-link">Get Involved</a>
+            </div>
+            <div class="card">
+                <h3>Community Stories</h3>
+                <p>Highlighting stories, art, and ideas from our amazing community that inspire and shape our creations.</p>
+                <a href="#community" class="button-link">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2021 The Mythicz. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
