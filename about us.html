@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Mythicz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(to bottom, #1e2022, #0d0d0d);
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background-color: #111;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffc107;
+            text-transform: uppercase;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffc107;
+        }
+
+        section {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffc107;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .card {
+            background: #222;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #111;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav {
+                margin-top: 1rem;
+            }
+
+            header nav a {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">The Mythicz</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#about-us">About</a>
+            <a href="work.html">Our Work</a>
+            <a href="games.html">Games</a>
+            <a href="careers.html">Careers</a>
+            <a href="creativity.html">Creativity</a>
+            <a href="help.html">Help</a>
+        </nav>
+    </header>
+
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to The Mythicz, where we bring the timeless stories of Indian mythology to life. Our mission is to inspire and educate through immersive storytelling, captivating gameplay, and stunning visuals that honor India's rich cultural heritage.</p>
+        <div class="about-grid">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>We strive to bridge the gap between tradition and technology by crafting experiences that celebrate the ancient tales of Indian mythology in a modern, interactive format.</p>
+            </div>
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>Our vision is to lead the creation of mythological content, captivating audiences worldwide while preserving the cultural richness of India's heritage through gaming powered by immersive technology.</p>
+            </div>
+            <div class="card">
+                <h3>Our Team</h3>
+                <p>Our team comprises passionate storytellers, artists, developers, and researchers dedicated to creating experiences that resonate with audiences of all ages and backgrounds.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <h2>Why Us?</h2>
+        <p>At The Mythicz, we bridge the gap between ancient mythology and modern technology, offering an unparalleled fusion of timeless narratives and immersive interactive experiences. Our team is passionately committed to revitalizing India's rich mythological heritage, breathing new life into age-old tales and transforming them into dynamic worlds that engage and inspire contemporary audiences.
+
+            Guided by a deep respect for tradition and an unwavering drive for innovation, we craft extraordinary adventures where players can delve into moral dilemmas, embody legendary figures, and undertake epic quests. Each game we create is designed to spark curiosity, inspire creativity, and immerse players in the profound wisdom and cultural significance of these ancient stories.
+            
+            We believe in storytelling that transcends boundaries—our work isn't just about narrating myths; it's about making them come alive. Through our creations, we aim to foster a global community of gamers, creators, and mythology enthusiasts who connect, learn, and share their passion for the legends that have shaped human history.
+            
+            At The Mythicz, we invite you to be part of a movement that celebrates the richness of India's mythological heritage while embracing the limitless possibilities of the future. Join us in shaping the future of interactive storytelling—immerse yourself in the power of legends, connect with a vibrant community of like-minded individuals, and embark on unforgettable journeys that honor the past and envision the future.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Mythicz. All rights reserved.</p>
+        <a href="https://www.instagram.com/the.myticz/" target="_blank">Instagram</a>
+        <a href="https://twitter.com/TheMyticz" target="_blank">Twitter</a>
+        <a href="mailto:themythicz@gmail.com">Email Us</a>
+    </footer>
+</body>
+
+</html>
