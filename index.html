@@ -1,199 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amuktha Goteti - Portfolio</title>
+    <title>The Mythicz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        /* General Reset and Styles */
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            line-height: 1.6;
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(to bottom, #1e2022, #111);
+            color: #fff;
             overflow-x: hidden;
         }
-        a {
-            text-decoration: none;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            box-sizing: border-box;
         }
-        h1, h2, h3 {
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffc107;
+            text-transform: uppercase;
+        }
+
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffc107;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('mythic-bg.jpg') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
             margin: 0;
         }
 
-        /* Header Section */
-        header {
-            text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(135deg, #161b22, #0d1117);
-            position: relative;
-        }
-        header::before, header::after {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(88, 166, 255, 0.2), transparent);
-            border-radius: 50%;
-            z-index: 1;
-        }
-        header::before {
-            top: -50px;
-            left: -50px;
-        }
-        header::after {
-            bottom: -50px;
-            right: -50px;
-            background: radial-gradient(circle, rgba(255, 126, 255, 0.2), transparent);
-        }
-        header h1 {
-            font-size: 3.5rem;
-            color: #58a6ff;
-            margin-bottom: 10px;
-            z-index: 2;
-            position: relative;
-        }
-        header span {
-            color: #ff7eff;
-        }
-        header p {
-            font-size: 1.2rem;
-            color: #8b949e;
-            z-index: 2;
-            position: relative;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: #58a6ff;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: 2px solid #58a6ff;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            background: #58a6ff;
-            color: #0d1117;
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0 2rem;
         }
 
-        /* Section Styling */
+        .hero .button-link {
+            background-color: #ffc107;
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .hero .button-link:hover {
+            background-color: #e6a700;
+        }
+
         section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #58a6ff;
-            margin-bottom: 40px;
-        }
-        section p {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #8b949e;
-        }
-        .button-link {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #0d1117;
-            background: #58a6ff;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .button-link:hover {
-            background: #ff7eff;
-            color: #0d1117;
-        }
-
-        /* Grid Sections */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: #161b22;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
-        .card h3 {
-            color: #79c0ff;
-            margin-bottom: 10px;
-        }
-
-        /* Quotes Section */
-        #quotes {
-            background-color: #1e2022;
-            text-align: center;
             padding: 4rem 2rem;
+            text-align: center;
         }
-        #quotes h2 {
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: #ffc107;
         }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #1e2022;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #000;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .button-link {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: #ffc107;
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button-link:hover {
+            background-color: #e6a700;
+            transform: scale(1.05);
+        }
+
+
+        /* Contact Links */
+        .contact a {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">The Mythicz</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about-us">About</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#work">Our Work</a>
+            <a href="#games">Games</a>
+            <a href="#careers">Careers</a>
+            <a href="#creativity">Creativity</a>
+            <a href="#community">Community</a>
+            <a href="#help">Help</a>
+            <a href="#quotes">Quotes</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Unleash the Legends</h1>
+        <p>Embark on an epic journey through the myths of India. Discover heroes, gods, and stories reimagined.</p>
+        <a href="#about-us" class="button-link">Explore Now</a>
+    </section>
+
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>We explore the vast and intricate tapestry of India's ancient mythological heritage, uncovering timeless stories, revered deities, and legendary heroes that have shaped the cultural fabric of the nation. With their profound narratives and enduring wisdom, these tales provide a foundation for crafting gaming worlds that are as immersive as they are enlightening. Each story serves as a gateway to a universe filled with vibrant landscapes, divine encounters, and epic quests, offering players a unique opportunity to connect with the richness of Indian mythology.  
+
+            By merging these captivating legends with cutting-edge interactive gameplay, we transform traditional lore into dynamic experiences that resonate with modern audiences. Players can engage with moral dilemmas, embody heroic archetypes, and explore the timeless themes of good versus evil, duty, and destiny. Through this fusion of mythology and technology, we aim to transport players into realms of wonder and adventure, fostering a deeper appreciation for the cultural and spiritual treasures of India's mythological past.</p>
+        <a href="about us.html" class="button-link">Learn more about us</a>    
+    </section>
+
+    <section id="why-us">
+        <h2>Why Us?</h2>
+        <p>At The Mythicz, we offer a unique blend of ancient mythological narratives and cutting-edge interactive experiences. Our team is dedicated to reimagining India's rich mythological heritage, transforming timeless stories into immersive worlds that resonate with today's audiences. With a deep respect for tradition and a passion for innovation, we create unforgettable adventures where players can explore moral dilemmas, embody legendary heroes, and experience epic quests.</p>
+        <p>We don’t just tell stories; we bring them to life in ways that spark creativity, foster community, and invite you to experience the profound lessons embedded in these ancient myths. Whether you’re a gamer, a creator, or simply a mythology enthusiast, our vision is to create a space where everyone can connect, learn, and embark on legendary journeys.</p>
+        <p>Join us in shaping the future of interactive mythology. Experience the power of legends, connect with like-minded individuals, and be a part of a movement that celebrates the richness of India's mythological past while embracing the possibilities of the future.</p>
+    </section>
+    
+    <section id="work">
+        <h2>Work</h2>
+        <p>Discover more about the impactful work we do and the mission that drives us to make a difference. Explore how our initiatives align with our commitment to creating meaningful change in the communities we serve. Our work is driven by a passion for storytelling, a commitment to excellence, and a dedication to creating immersive experiences that inspire, educate, and entertain. Through our projects, we aim to bring the magic of Indian mythology to a global audience, fostering a deeper appreciation for the cultural heritage and spiritual wisdom of the ancient world. From interactive games to educational resources, we strive to create content that resonates with diverse audiences, transcends boundaries, and sparks curiosity and creativity in all who engage with it. Join us on our journey to explore the myths of India and unlock the power of storytelling to transform lives and inspire change. Are you ready to embark on an epic adventure? Explore our projects and discover the magic of Indian mythology.</p>
+        <a href="work.html" class="button-link">Learn more</a> 
+    </section>
+
+    <section id="games">
+        <h2>Games</h2>
+        <p>Explore our collection of games inspired by the myths of India. Each game offers a unique blend of storytelling, gameplay, and artistry, inviting players to embark on epic adventures, face divine challenges, and uncover the mysteries of the ancient world. From action-packed battles to intricate puzzles, our games are designed to captivate, challenge, and inspire players of all ages. Whether you're a seasoned gamer or new to the world of interactive entertainment, our diverse portfolio has something for everyone. Immerse yourself in the myths of India, discover the power of storytelling, and experience the magic of gaming like never before. Join us on a journey through the realms of gods and demons, heroes and villains, and unlock the secrets of India's mythological past. Are you ready to unleash the legends? Explore our collection of games and embark on an epic adventure through the myths of India.</p>
+        <a href="games.html" class="button-link">Explore our projects</a> 
+    </section>
+
+    <section id="careers">
+        <h2>Careers</h2>
+        <p>Collabrate with us to create an immersive experience. At The Mythicz, we're always looking for talented individuals to join our team. Whether you're an artist, a writer, a developer, or simply a mythology enthusiast, we invite you to explore our career opportunities and be a part of our mission to bring the magic of Indian mythology to the world. Join us in shaping the future of interactive storytelling, creating unforgettable experiences, and connecting with a global community of mythic enthusiasts. Together, we can unlock the power of legends, inspire creativity, and embark on epic adventures that transcend time and space. Are you ready to unleash the legends? Explore our career opportunities and join us on a journey through the myths of India.</p>
+        <a href="careers.html" class="button-link">Join Us</a> 
+    </section>
+
+    <section id="creativity">
+        <h2>Igniting Imagination</h2>
+        <p>At The Mythicz, creativity lies at the heart of our journey. By breathing new life into ancient myths and designing dynamic gaming worlds, we infuse every aspect of our work with limitless imagination. Our team of talented artists, writers, and developers work together to create experiences that seamlessly blend tradition with innovation.</p>
+        <p>Enter worlds where gods coexist with mortals, mythical creatures roam untamed, and every narrative is a masterpiece waiting to unfold. Through each game, we invite you to dream, create, and embark on limitless adventures inspired by the rich mythological heritage of India.</p>
+        <a href="creativity.html" class="button-link">Join Us</a>
+    </section>
+    
+    <section id="community">
+        <h2>Join Our Community</h2>
+        <p>Connect with fellow mythic enthusiasts, share your thoughts, and stay updated on the latest news and events.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Discord</h3>
+                <p>Join our Discord server to chat with fellow players, share your experiences, and participate in community events.</p>
+                <a href="https://discord.gg/YA296Wte" class="button-link">Join Us on Discord</a>
+            </div>
+            <div class="card">
+                <h3>Share Your Journey</h3>
+                <p>Got a story to share? Click below to email us and tell us what brought you here!</p>
+                <a href="mailto:themythicz@gmail.com" class="button-link">Email Us</a>
+            </div>
+        </div>
+    </section>   
+
+    <section id="quotes">
+        <h2>Words of Wisdom</h2>
+        <div class="quote-container">
+            <div class="quote-card">
+                <blockquote>
+                    "Do not be afraid to stand for what you believe in, even if that means standing alone."
+                </blockquote>
+                <p>- Valmiki</p>
+            </div>
+            <div class="quote-card">
+                <blockquote>
+                    "Dharma is more important than any divine boon."
+                </blockquote>
+                <p>- Lord Rama</p>
+            </div>
+            <div class="quote-card">
+                <blockquote>
+                    "The right path is one that is difficult to walk on, yet it brings happiness."
+                </blockquote>
+                <p>- Valmiki</p>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        #quotes {
+            background-color: #1e2022;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+    
+        #quotes h2 {
+            font-size: 2.5rem;
+            color: #ffc107;
+            margin-bottom: 2rem;
+        }
+    
         .quote-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
+    
         .quote-card {
             background: #2a2d31;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+    
         .quote-card blockquote {
+            font-size: 1.25rem;
             font-style: italic;
             color: #fff;
             margin-bottom: 1rem;
         }
+    
         .quote-card p {
+            font-size: 1rem;
             color: #ffc107;
         }
-
-        /* Footer Section */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #161b22;
-            color: #8b949e;
-        }
-        footer a {
-            color: #58a6ff;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            nav {
-                flex-direction: column;
-            }
-            section {
-                padding: 40px 10px;
-            }
-        }
     </style>
-</head>
-<body>
-    <!-- Rest of your content here -->
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you! Whether you have a question, want to collaborate, or simply want to connect with our community, feel free to reach out to us through the following channels:</p>
+        <div class="contact">
+            <a href="https://www.instagram.com/the.myticz/" target="_blank" aria-label="Visit our Instagram">Instagram</a>
+            <a href="https://twitter.com/TheMyticz" target="_blank" aria-label="Visit our Twitter">Twitter</a>
+            <a href="mailto:themythicz@gmail.com" aria-label="Send us an email">Email Us</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 The Mythicz. All Rights Reserved.</p>
+    </footer>
 </body>
+
 </html>
