@@ -5,79 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply - Concept Artists</title>
     <style>
+        /* General Reset */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(to bottom, #1e2022, #111);
+            color: #fff;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #444;
-        }
-
-        form {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 3rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            box-sizing: border-box;
         }
 
-        label {
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffc107;
+            text-transform: uppercase;
         }
 
-        input, textarea, select, button {
-            margin-bottom: 1rem;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
             font-size: 1rem;
+            transition: color 0.3s;
         }
 
-        button {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            cursor: pointer;
+        header nav a:hover {
+            color: #ffc107;
         }
 
-        button:hover {
-            background-color: #4cae4c;
+        .container {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 2rem;
+            background: #1e2022;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        .file-upload {
+        .job-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .job-header h1 {
+            font-size: 2rem;
+            color: #ffc107;
+            margin: 0;
+        }
+
+        .job-header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 0;
+            color: #aaa;
+        }
+
+        .apply-button {
+            margin-top: 1rem;
+            display: inline-block;
+            background-color: #ffc107;
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .apply-button:hover {
+            background-color: #e6a700;
+            transform: scale(1.05);
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            color: #ffc107;
             margin-bottom: 1rem;
         }
 
-        .error {
-            color: red;
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .content ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+
+        .content p {
+            font-size: 1rem;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #000;
+            color: #fff;
             font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .button-link {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button-link:hover {
+            background-color: #e6a700;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Apply to Join as a Concept Artist</h1>
+        <div class="logo">Concept Artists</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
-    <main>
-        <h1>Application Form</h1>
+
+    <div class="container">
+        <div class="job-header">
+            <h1>Apply to Join as a Concept Artist</h1>
+            <p>Showcase your creativity and be part of our dynamic team.</p>
+        </div>
+
         <form action="/submit-application" method="post" enctype="multipart/form-data">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -102,8 +200,12 @@
             <label for="message">Tell us why you want to join</label>
             <textarea id="message" name="message" rows="5" placeholder="Share your passion and motivation" required></textarea>
 
-            <button type="submit">Submit Application</button>
+            <a class="apply-button" href="#" onclick="document.querySelector('form').submit();">Submit Application</a>
         </form>
-    </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Concept Artists. <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </footer>
 </body>
 </html>
