@@ -159,23 +159,110 @@
                 gap: 2rem;
             }
         }
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 800px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #ffc107;
+            transform: translateX(-50%);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-event.left {
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-event.right {
+            margin-left: 50%;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: #ffc107;
+            border-radius: 50%;
+            border: 3px solid #0d1117;
+            box-shadow: 0 0 0 4px #ffc107;
+        }
+
+        .timeline-event.left::before {
+            right: -10px;
+        }
+
+        .timeline-event.right::before {
+            left: -10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-event.left,
+            .timeline-event.right {
+                margin: 0;
+                text-align: center;
+            }
+
+            .timeline-event::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        h1
+        {
+            font-size: 3.5rem;
+            color: #ffc107;
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="logo">The Mythicz</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about us.html">About</a>
-            <a href="work.html">Our Work</a>
-            <a href="games.html">Games</a>
-            <a href="#">Ramayana</a>
-            <a href="careers.html">Careers</a>
-            <a href="creativity.html">Creativity</a>
-            <a href="help.html">Help</a>
-        </nav>
     </header>
+
+    <section class="hero">
+        <h1>Enter the realm of The Mythicz.</h1>
+        <p>Set out on a legendary adventure through India’s myths. Discover reimagined stories of gods, heroes, and timeless legends.</p>
+        <nav>
+            <a href="index.html" class="button-link">Home</a>
+            <a href="about us.html" class="button-link">About</a>
+            <a href="work.html" class="button-link">Our Work</a>
+            <a href="#" class="button-link">Ramayana</a>
+            <a href="creativity.html" class="button-link">Creativity</a>
+            <a href="help.html" class="button-link">Help</a>
+        </nav>
+    </section>
+
     <section id="ramayana">
         <h2>The Ramayana Saga</h2>
 
@@ -187,17 +274,19 @@
             
             The Ramayana Saga is not just a game, but a journey that connects the past with the present, allowing players to experience the magic and wisdom of ancient Indian mythology through epic quests, strategic challenges, and a story that continues to resonate with audiences across the world.</p>
         <div class="grid">
-            <div class="card">
-                <h3>Legend of Rama</h3>
-                <p>Join Rama, the hero prince, as he embarks on an epic journey to rescue his beloved wife Sita from the clutches of the demon king Ravana.</p>
-            </div>
-            <div class="card">
-                <h3>Sita's Strength</h3>
-                <p>Explore the courage and wisdom of Sita, a symbol of devotion and strength, as she navigates the challenges in her quest to reunite with Rama.</p>
-            </div>
-            <div class="card">
-                <h3>The Battle Against Ravana</h3>
-                <p>Experience the ultimate clash between good and evil as Rama faces Ravana in a battle that will decide the fate of the world.</p>
+            <div class="timeline">
+                <div class="timeline-event left">
+                    <h3>Legend of Rama</h3>
+                    <p>Join Rama, the hero prince, as he embarks on an epic journey to rescue his beloved wife Sita from the clutches of the demon king Ravana.</p>
+                </div>
+                <div class="timeline-event right">
+                    <h3>Sita's Strength</h3>
+                    <p>Explore the courage and wisdom of Sita, a symbol of devotion and strength, as she navigates the challenges in her quest to reunite with Rama.</p>
+                </div>
+                <div class="timeline-event left">
+                    <h3>The Battle Against Ravana</h3>
+                    <p>Experience the ultimate clash between good and evil as Rama faces Ravana in a battle that will decide the fate of the world.</p>
+                </div>
             </div>
         </div>
     
