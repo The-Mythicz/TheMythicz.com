@@ -166,6 +166,82 @@
             text-decoration: none;
             display: inline-block;
         }
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 800px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #58a6ff;
+            transform: translateX(-50%);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-event.left {
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-event.right {
+            margin-left: 50%;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: #58a6ff;
+            border-radius: 50%;
+            border: 3px solid #0d1117;
+            box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.5);
+        }
+
+        .timeline-event.left::before {
+            right: -10px;
+        }
+
+        .timeline-event.right::before {
+            left: -10px;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-event.left,
+            .timeline-event.right {
+                margin: 0;
+                text-align: center;
+            }
+
+            .timeline-event::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
     </style>
 </head>
 
@@ -175,7 +251,6 @@
         <nav>
             <a href="#">Home</a>
             <a href="#about-us">About</a>
-            <a href="#why-us">Why Us</a>
             <a href="#work">Our Work</a>
             <a href="#games">Games</a>
             <a href="#creativity">Creativity</a>
@@ -193,18 +268,21 @@
     </section>
 
     <section id="about-us">
-        <h2>About Us</h2>
-        <p>We explore the vast and intricate tapestry of India's ancient mythological heritage, uncovering timeless stories, revered deities, and legendary heroes that have shaped the cultural fabric of the nation. With their profound narratives and enduring wisdom, these tales provide a foundation for crafting gaming worlds that are as immersive as they are enlightening. Each story serves as a gateway to a universe filled with vibrant landscapes, divine encounters, and epic quests, offering players a unique opportunity to connect with the richness of Indian mythology.  
-
-            By merging these captivating legends with cutting-edge interactive gameplay, we transform traditional lore into dynamic experiences that resonate with modern audiences. Players can engage with moral dilemmas, embody heroic archetypes, and explore the timeless themes of good versus evil, duty, and destiny. Through this fusion of mythology and technology, we aim to transport players into realms of wonder and adventure, fostering a deeper appreciation for the cultural and spiritual treasures of India's mythological past.</p>
-        <a href="about us.html" class="button-link">Learn more about us</a>    
-    </section>
-
-    <section id="why-us">
-        <h2>Why Us?</h2>
-        <p>At The Mythicz, we offer a unique blend of ancient mythological narratives and cutting-edge interactive experiences. Our team is dedicated to reimagining India's rich mythological heritage, transforming timeless stories into immersive worlds that resonate with today's audiences. With a deep respect for tradition and a passion for innovation, we create unforgettable adventures where players can explore moral dilemmas, embody legendary heroes, and experience epic quests.</p>
-        <p>We don’t just tell stories; we bring them to life in ways that spark creativity, foster community, and invite you to experience the profound lessons embedded in these ancient myths. Whether you’re a gamer, a creator, or simply a mythology enthusiast, our vision is to create a space where everyone can connect, learn, and embark on legendary journeys.</p>
-        <p>Join us in shaping the future of interactive mythology. Experience the power of legends, connect with like-minded individuals, and be a part of a movement that celebrates the richness of India's mythological past while embracing the possibilities of the future.</p>
+        <div class="timeline">
+            <div class="timeline-event left">
+                <h2>About Us</h2>
+                <p>We explore the vast and intricate tapestry of India's ancient mythological heritage, uncovering timeless stories, revered deities, and legendary heroes that have shaped the cultural fabric of the nation. With their profound narratives and enduring wisdom, these tales provide a foundation for crafting gaming worlds that are as immersive as they are enlightening. Each story serves as a gateway to a universe filled with vibrant landscapes, divine encounters, and epic quests, offering players a unique opportunity to connect with the richness of Indian mythology.  
+    
+                By merging these captivating legends with cutting-edge interactive gameplay, we transform traditional lore into dynamic experiences that resonate with modern audiences. Players can engage with moral dilemmas, embody heroic archetypes, and explore the timeless themes of good versus evil, duty, and destiny. Through this fusion of mythology and technology, we aim to transport players into realms of wonder and adventure, fostering a deeper appreciation for the cultural and spiritual treasures of India's mythological past.</p>
+                <a href="about us.html" class="button-link">Learn more about us</a>  
+            </div>
+            <div class="timeline-event right">
+                <h2>Why Us?</h2>
+                <p>At The Mythicz, we offer a unique blend of ancient mythological narratives and cutting-edge interactive experiences. Our team is dedicated to reimagining India's rich mythological heritage, transforming timeless stories into immersive worlds that resonate with today's audiences. With a deep respect for tradition and a passion for innovation, we create unforgettable adventures where players can explore moral dilemmas, embody legendary heroes, and experience epic quests.</p>
+                <p>We don’t just tell stories; we bring them to life in ways that spark creativity, foster community, and invite you to experience the profound lessons embedded in these ancient myths. Whether you’re a gamer, a creator, or simply a mythology enthusiast, our vision is to create a space where everyone can connect, learn, and embark on legendary journeys.</p>
+                <p>Join us in shaping the future of interactive mythology. Experience the power of legends, connect with like-minded individuals, and be a part of a movement that celebrates the richness of India's mythological past while embracing the possibilities of the future.</p>
+            </div>
+        </div>
     </section>
     
     <section id="work">
