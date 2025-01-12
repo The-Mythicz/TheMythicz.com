@@ -159,6 +159,89 @@
                 gap: 2rem;
             }
         }
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 800px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #ffc107;
+            transform: translateX(-50%);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-event.left {
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-event.right {
+            margin-left: 50%;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: #ffc107;
+            border-radius: 50%;
+            border: 3px solid #0d1117;
+            box-shadow: 0 0 0 4px #ffc107;
+        }
+
+        .timeline-event.left::before {
+            right: -10px;
+        }
+
+        .timeline-event.right::before {
+            left: -10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-event.left,
+            .timeline-event.right {
+                margin: 0;
+                text-align: center;
+            }
+
+            .timeline-event::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        h1
+        {
+            font-size: 3.5rem;
+            color: #ffc107;
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
 
@@ -169,7 +252,6 @@
             <a href="index.html">Home</a>
             <a href="about us.html">About</a>
             <a href="#work">Our Work</a>
-            <a href="games.html">Games</a>
             <a href="careers.html">Careers</a>
             <a href="creativity.html">Creativity</a>
             <a href="help.html">Help</a>
@@ -179,18 +261,18 @@
     <section id="work">
         <h2>Our Work</h2>
         <p>Explore the projects and collaborations that bring our vision to life. From immersive gaming experiences to community-driven initiatives, our work speaks to the heart of storytelling and innovation.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>Projects we are working on</h3>
-                <p>Action-adventure games that reimagines Indian mythology with stunning graphics and engaging gameplay.</p>
-                <a href="games.html" class="button-link">Get a sneak peek of our projects</a>
+        <div class="timeline">
+            <div class="timeline-event left">
+                    <h3>Projects we are working on</h3>
+                    <p>Action-adventure games that reimagines Indian mythology with stunning graphics and engaging gameplay.</p>
+                    <a href="ramayana.html" class="button-link">Get a sneak peek of our projects</a>
             </div>
-            <div class="card">
+            <div class="timeline-event right">
                 <h3>Collaborations</h3>
                 <p>Partnering with artists, writers, and developers to create meaningful and impactful experiences.</p>
                 <a href="creativity.html" class="button-link">Get Involved</a>
             </div>
-            <div class="card">
+            <div class="timeline-event left">
                 <h3>Community Stories</h3>
                 <p>Highlighting stories, art, and ideas from our amazing community that inspire and shape our creations.</p>
                 <a href="https://discord.gg/FSpw6zH6Ns" class="button-link">Get Involved</a>
