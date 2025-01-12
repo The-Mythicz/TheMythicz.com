@@ -7,13 +7,11 @@
     <title>The Mythicz</title>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Reset and Styles */
         body {
             margin: 0;
             font-family: 'Rajdhani', sans-serif;
-            background: #181a1d;
+            background: linear-gradient(to bottom, #1e2022, #0d0d0d);
             color: #fff;
-            overflow-x: hidden;
         }
 
         header {
@@ -21,30 +19,27 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 3rem;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #111;
             position: fixed;
             width: 100%;
             z-index: 1000;
             top: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
         }
 
         header .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
             color: #ffc107;
             text-transform: uppercase;
-        }
-
-        header nav {
-            display: flex;
-            gap: 1.5rem;
         }
 
         header nav a {
             color: #fff;
             text-decoration: none;
             font-size: 1rem;
+            margin-left: 1.5rem;
             transition: color 0.3s;
         }
 
@@ -52,58 +47,83 @@
             color: #ffc107;
         }
 
-        /* Section Styles */
         section {
             padding: 6rem 2rem 4rem;
             text-align: center;
-            background: linear-gradient(to bottom, #202328, #181a1d);
-            border-radius: 10px;
-            margin: 2rem 2rem;
+            margin-top: 4rem;
         }
 
         h2 {
-            font-size: 2.8rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: #ffc107;
         }
 
         p {
-            margin: 1rem 0 2rem;
             line-height: 1.6;
             font-size: 1.1rem;
         }
 
-        .grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
-            flex-wrap: wrap;
+            text-align: left;
         }
 
         .card {
-            background: #2a2d30; /* Brighter card background for better contrast */
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            text-align: center;
+            background: #222;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
         }
 
         .card h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #ffc107;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .card p {
-            font-size: 1.1rem;
-            color: #ddd;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #111;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-top: 4rem;
         }
 
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav {
+                margin-top: 1rem;
+            }
+
+            header nav a {
+                margin: 0.5rem 0;
+            }
+        }
         .button-link {
             display: inline-block;
             margin-top: 1.5rem;
@@ -122,41 +142,81 @@
             background-color: #e6a700;
             transform: scale(1.05);
         }
-
-        /* Footer Styles */
-        footer {
-            padding: 2rem 1rem;
-            text-align: center;
-            background: #111;
-            color: #fff;
-            font-size: 0.9rem;
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 800px;
         }
 
-        footer a {
-            color: #ffc107;
-            text-decoration: none;
-            margin: 0 0.5rem;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #ffc107;
+            transform: translateX(-50%);
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .timeline-event {
+            position: relative;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive Design */
+        .timeline-event.left {
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-event.right {
+            margin-left: 50%;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: #ffc107;
+            border-radius: 50%;
+            border: 3px solid #0d1117;
+            box-shadow: 0 0 0 4px #ffc107;
+        }
+
+        .timeline-event.left::before {
+            right: -10px;
+        }
+
+        .timeline-event.right::before {
+            left: -10px;
+        }
+
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
+            header h1 {
+                font-size: 2.5rem;
             }
 
-            header nav {
-                flex-wrap: wrap;
-                gap: 1rem;
+            .timeline-event.left,
+            .timeline-event.right {
+                margin: 0;
+                text-align: center;
             }
 
-            .grid {
-                flex-direction: column;
-                gap: 2rem;
+            .timeline-event::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -178,35 +238,44 @@
     </header>
 
     <section id="help">
-        <h2>Help & Support</h2>
-        <p>Welcome to The Mythicz! If you need assistance or have any questions, you've come to the right place. Below you'll find helpful information to guide you through our website and community.</p>
-    
-        <h3>General Inquiries</h3>
-        <p>If you have general questions about our projects, mythology exploration, or need more details about our work, please feel free to reach out to us via email or through our social media channels. We're here to help!</p>
-        <a href="mailto:themythicz@gmail.com" class="button-link">Email Us</a>
-    
-        <h3>Technical Support</h3>
-        <p>For any issues related to gameplay, website functionality, or troubleshooting, please contact our support team. We strive to ensure a smooth experience for all our users, and we’ll be happy to assist you with any technical difficulties.</p>
-        <a href="mailto:themythicz@gmail.com" class="button-link">Contact Support</a>
-    
-        <h3>Frequently Asked Questions (FAQ)</h3>
-        <p>We’ve compiled a list of common questions and answers to help you get the most out of your experience with The Mythicz. Check out the FAQ below for more information:</p>
-        <ul>
-            <p><a href="#about-us" class="button-link">What is The Mythicz?</a></p>
-            <p><a href="careers.html" class="button-link">How can I get involved with your projects?</a></p>
-            <p><a href="#community" class="button-link">How do I join the community?</a></p>
-        </ul>
-    
-        <h3>Connect with Us</h3>
-        <p>If you're looking for immediate updates, news, or to interact with other members of the Mythicz community, follow us on our social media platforms.</p>
-        <a href="https://www.instagram.com/the.myticz/" target="_blank" class="button-link">Instagram</a>
-        <a href="https://twitter.com/TheMyticz" target="_blank" class="button-link">Twitter</a>
-        <a href="https://www.linkedin.com/company/themythicz/" target="_blank" class="button-link">LinkedIn</a>
-    
-        <h3>Feedback</h3>
-        <p>Your feedback is invaluable to us! If you have suggestions, ideas, or comments about how we can improve, please don’t hesitate to share them. We appreciate your contribution to making The Mythicz better!</p>
-        <a href="mailto:themythicz@gmail.com" class="button-link">Send Feedback</a>
+        <h2>Get Help</h2>
+        <p>Need assistance? We're here to help! Whether you have general inquiries, need technical support, or want to connect with us on social media, we've got you covered. Check out the options below to get the help you need:</p>
+        <div class="timeline">
+            <div class="timeline-event left">
+                <h3>General Inquiries</h3>
+                <p>If you have general questions about our projects, mythology exploration, or need more details about our work, please feel free to reach out to us via email or through our social media channels. We're here to help!</p>
+                <a href="mailto:themyticz@gmail.com" class="button-link">Email Us</a>
+            </div>
+            <div class="timeline-event right">
+                <h3>Technical Support</h3>
+                <p>For any issues related to gameplay, website functionality, or troubleshooting, please contact our support team. We strive to ensure a smooth experience for all our users, and we’ll be happy to assist you with any technical difficulties.</p>
+                <a href="mailto:themyticz@gmail.com" class="button-link">Contact Support</a>
+            </div>
+            <div class="timeline-event left">
+                <h3>Frequently Asked Questions (FAQ)</h3>
+                <p>We’ve compiled a list of common questions and answers to help you get the most out of your experience with The Mythicz. Check out the FAQ below for more information:</p>
+                <ul>
+                    <p><a href="#about-us" class="button-link">What is The Mythicz?</a></p>
+                    <p><a href="#community" class="button-link">How do I join the community?</a></p>
+                </ul>
+            </div>
+            <div class="timeline-event right">
+                <h3>Connect with Us</h3>
+                <p>If you're looking for immediate updates, news, or to interact with other members of the Mythicz community, follow us on our social media platforms.</p>
+                <a href="https://www.instagram.com/the.myticz/" target="_blank" class="button-link">Instagram</a>
+                <a href="https://twitter.com/TheMyticz" target="_blank" class="button-link">Twitter</a>
+                <a href="mailto:themytics@gmail.com" class="button-link">Email Us</a>
+            </div>
+        </div>
     </section> 
+
+    <footer>
+        <p>
+            <a href="https://www.instagram.com/the.myticz/">Instagram</a>
+            <a href="https://twitter.com/TheMyticz">Twitter</a>
+            <a href="mailto:themytics@gmail.com">Email Us</a>
+        </p>
+    </footer>
 </body>
 
 </html>
