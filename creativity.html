@@ -159,6 +159,89 @@
                 gap: 2rem;
             }
         }
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 800px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #ffc107;
+            transform: translateX(-50%);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-event.left {
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-event.right {
+            margin-left: 50%;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: #ffc107;
+            border-radius: 50%;
+            border: 3px solid #0d1117;
+            box-shadow: 0 0 0 4px #ffc107;
+        }
+
+        .timeline-event.left::before {
+            right: -10px;
+        }
+
+        .timeline-event.right::before {
+            left: -10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-event.left,
+            .timeline-event.right {
+                margin: 0;
+                text-align: center;
+            }
+
+            .timeline-event::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        h1
+        {
+            font-size: 3.5rem;
+            color: #ffc107;
+            margin-bottom: 1.5rem;
+        }
     </style>
 </head>
 
@@ -169,8 +252,6 @@
             <a href="index.html">Home</a>
             <a href="about us.html">About</a>
             <a href="work.html">Our Work</a>
-            <a href="games.html">Games</a>
-            <a href="careers.html">Careers</a>
             <a href="#creativity">Creativity</a>
             <a href="#community">Community</a>
             <a href="help.html">Help</a>
@@ -182,26 +263,27 @@
         <p>At The Mythicz, creativity is the essence of our journey. From reimagining age-old myths to designing vibrant gaming worlds, every element is infused with boundless imagination. Our team of artists, writers, and developers collaborate to craft experiences that honor tradition while embracing innovation.</p>
         <p>Step into realms where gods walk among mortals, mythical creatures roam free, and every story is a masterpiece waiting to be unraveled. With every game, we invite you to dream, create, and explore endless possibilities inspired by the mythological heritage of India.</p>
         <div class="grid">
-            <div class="card">
-                <h3>Art & Design</h3>
-                <p>Immerse yourself in stunning visuals and intricate designs inspired by ancient Indian art, architecture, and folklore.</p>
-            </div>
-            <div class="card">
-                <h3>Interactive Storytelling</h3>
-                <p>Experience narratives brought to life with dynamic choices, engaging characters, and moral dilemmas.</p>
-            </div>
-            <div class="card">
-                <h3>Community Contributions</h3>
-                <p>Share your creative ideas and help shape the future of Mythicz with your unique perspective.</p>
-            </div>
-            <div class="card">
-                <h3>Game Mechanics</h3>
-                <p>Explore innovative gameplay that blends action, strategy, and exploration, offering a fresh take on classic myths.</p>
-            </div>
-            <div class="card">
-                <h3>Music & Soundscapes</h3>
-                <p>Lose yourself in an auditory experience with music inspired by traditional Indian instruments and modern cinematic sounds.</p>
-            </div>
+            <div class="timeline">
+                <div class="timeline-event left">
+                    <h3>Art & Design</h3>
+                    <p>Immerse yourself in stunning visuals and intricate designs inspired by ancient Indian art, architecture, and folklore.</p>
+                </div>
+                <div class="timeline-event right">
+                    <h3>Interactive Storytelling</h3>
+                    <p>Experience narratives brought to life with dynamic choices, engaging characters, and moral dilemmas.</p>
+                </div>
+                <div class="timeline-event left">
+                    <h3>Community Contributions</h3>
+                    <p>Share your creative ideas and help shape the future of Mythicz with your unique perspective.</p>
+                </div>
+                <div class="timeline-event right">
+                    <h3>Game Mechanics</h3>
+                    <p>Explore innovative gameplay that blends action, strategy, and exploration, offering a fresh take on classic myths.</p>
+                </div>
+                <div class="timeline-event left">
+                    <h3>Music & Soundscapes</h3>
+                    <p>Lose yourself in an auditory experience with music inspired by traditional Indian instruments and modern cinematic sounds.</p>
+                </div>
         </div>
         <div class="extra-content">
             <h3>Why Creativity Matters</h3>
@@ -215,15 +297,17 @@
         <h2>Join Our Community</h2>
         <p>Connect with fellow mythic enthusiasts, share your thoughts, and stay updated on the latest news and events.</p>
         <div class="grid">
-            <div class="card">
-                <h3>Discord</h3>
-                <p>Join our Discord server to chat with fellow players, share your experiences, and participate in community events.</p>
-                <a href="https://discord.gg/FSpw6zH6Ns" class="button-link">Join Us on Discord</a>
-            </div>
-            <div class="card">
-                <h3>Share Your Journey</h3>
-                <p>Got a story to share? Click below to email us and tell us what brought you here!</p>
-                <a href="mailto:themythicz@gmail.com" class="button-link">Email Us</a>
+            <div class="timeline">
+                <div class="timeline-event left">
+                    <h3>Discord</h3>
+                    <p>Join our Discord server to chat with fellow players, share your experiences, and participate in community events.</p>
+                    <a href="https://discord.gg/FSpw6zH6Ns" class="button-link">Join Us on Discord</a>
+                </div>
+                <div class="timeline-event right">
+                    <h3>Share Your Journey</h3>
+                    <p>Got a story to share? Click below to email us and tell us what brought you here!</p>
+                    <a href="mailto:themyticz@gmail.com" class="button-link">Email Us</a>
+                </div>
             </div>
         </div>
     </section>
