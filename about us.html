@@ -124,6 +124,101 @@
                 margin: 0.5rem 0;
             }
         }
+        .button-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background-color: #ffc107;
+            color: #000;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button-link:hover {
+            background-color: #e6a700;
+            transform: scale(1.05);
+        }
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 800px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #ffc107;
+            transform: translateX(-50%);
+        }
+
+        .timeline-event {
+            position: relative;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-event.left {
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-event.right {
+            margin-left: 50%;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: #ffc107;
+            border-radius: 50%;
+            border: 3px solid #0d1117;
+            box-shadow: 0 0 0 4px #ffc107;
+        }
+
+        .timeline-event.left::before {
+            right: -10px;
+        }
+
+        .timeline-event.right::before {
+            left: -10px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline-event.left,
+            .timeline-event.right {
+                margin: 0;
+                text-align: center;
+            }
+
+            .timeline-event::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     </style>
 </head>
 
@@ -144,37 +239,29 @@
     <section id="about-us">
         <h2>About Us</h2>
         <p>Welcome to The Mythicz, where we bring the timeless stories of Indian mythology to life. Our mission is to inspire and educate through immersive storytelling, captivating gameplay, and stunning visuals that honor India's rich cultural heritage.</p>
-        <div class="about-grid">
-            <div class="card">
+        <div class="timeline">
+            <div class="timeline-event left">
                 <h3>Our Mission</h3>
                 <p>We strive to bridge the gap between tradition and technology by crafting experiences that celebrate the ancient tales of Indian mythology in a modern, interactive format.</p>
             </div>
-            <div class="card">
+            <div class="timeline-event right">
                 <h3>Our Vision</h3>
                 <p>Our vision is to lead the creation of mythological content, captivating audiences worldwide while preserving the cultural richness of India's heritage through gaming powered by immersive technology.</p>
             </div>
-            <div class="card">
-                <h3>Our Team</h3>
-                <p>Our team comprises passionate storytellers, artists, developers, and researchers dedicated to creating experiences that resonate with audiences of all ages and backgrounds.</p>
+            <div class="timeline-event left">
+                <h3>Our Values</h3>
+                <p>At The Mythicz, we are guided by a commitment to authenticity, creativity, and inclusivity. We believe in the power of storytelling to connect people across generations and cultures.</p>
+            </div>
+            <div class="timeline-event right">
+                <h3>Why Us?</h3>
+                <p>At The Mythicz, we blend ancient mythology with modern technology, transforming timeless tales into immersive, interactive experiences that engage and inspire today’s audience.</p>
             </div>
         </div>
-    </section>
-
-    <section id="why-us">
-        <h2>Why Us?</h2>
-        <p>At The Mythicz, we bridge the gap between ancient mythology and modern technology, offering an unparalleled fusion of timeless narratives and immersive interactive experiences. Our team is passionately committed to revitalizing India's rich mythological heritage, breathing new life into age-old tales and transforming them into dynamic worlds that engage and inspire contemporary audiences.
-
-            Guided by a deep respect for tradition and an unwavering drive for innovation, we craft extraordinary adventures where players can delve into moral dilemmas, embody legendary figures, and undertake epic quests. Each game we create is designed to spark curiosity, inspire creativity, and immerse players in the profound wisdom and cultural significance of these ancient stories.
-            
-            We believe in storytelling that transcends boundaries—our work isn't just about narrating myths; it's about making them come alive. Through our creations, we aim to foster a global community of gamers, creators, and mythology enthusiasts who connect, learn, and share their passion for the legends that have shaped human history.
-            
-            At The Mythicz, we invite you to be part of a movement that celebrates the richness of India's mythological heritage while embracing the limitless possibilities of the future. Join us in shaping the future of interactive storytelling—immerse yourself in the power of legends, connect with a vibrant community of like-minded individuals, and embark on unforgettable journeys that honor the past and envision the future.</p>
     </section>
 
     <footer>
         <a href="https://www.instagram.com/the.myticz/" target="_blank">Instagram</a>
         <a href="https://twitter.com/TheMyticz" target="_blank">Twitter</a>
-        <a href="https://www.linkedin.com/company/themythicz/" target="_blank">LinkedIn</a>
         <a href="mailto:themythicz@gmail.com">Email Us</a>
     </footer>
 </body>
